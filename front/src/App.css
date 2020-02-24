@@ -1,0 +1,135 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ol, ul, li, form, label,
+table, tbody, thead, tr, th, td,
+article, aside, footer, header,
+menu, nav, section
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  list-style: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 50px;
+  box-sizing: border-box;
+  background-image: url('dishes.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.button__container {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burger-menu-hide {
+  display: none;
+}
+
+.text-area {
+  min-width: 250px;
+}
+
+.main-table__container {
+  height: 70vh;
+  overflow: auto;
+  margin: 20px;
+}
+
+.small-table__container{
+  height: 70vh;
+  overflow: auto;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+
+@media screen and (max-width: 767px) {
+  .ui.menu{
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .burger-menu,
+  .burger-menu.open {
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 9999;
+    background: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .burger-menu .bar1,
+  .bar2,
+  .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  .burger-menu.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+
+  .burger-menu.open .bar2 {
+    opacity: 0;
+  }
+
+  .burger-menu.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+
+  /* Menu */
+
+  .menu {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0px;
+  }
+  .menu ul {
+    position: relative;
+    top: 0px;
+    font-size: 24px;
+    padding: 0px;
+  }
+  .menu li {
+    list-style: outside none none;
+    margin: 10px 0px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .link {
+    color: #333333;
+  }
+
+  .link:hover {
+    color: #ff0000;
+  }
+
+}

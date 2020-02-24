@@ -1,0 +1,14 @@
+export const getRecipes = state => state.list;
+export const getRecipeLoadingError = state => state.loadingError;
+export const getRecipeSaving = state => state.saving;
+export const getRecipeSavingError = state => state.savingError;
+export const getRecipeCreateFormDisplayed = state => state.formDisplayed;
+export const getRecipeRemovedIds = state => state.removedIds;
+export const getRecipeFormTitle = state => state.formTitle;
+export const getRecipeFormDescription = state => state.formDescription;
+export const getRecipeFormDishKind = state => state.formDishKind;
+export const getRecipeEditedId = state => state.editedId;
+export const getRecipeFormEditMode = state => state.editedId !== null;
+export const getActivePage = state => state.activePage;
+export const getShowAllRecipes = state => state.showAllRecipes;
+export const getFormDisplayed = state => state.formDisplayed;
