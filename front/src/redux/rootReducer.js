@@ -42,9 +42,15 @@ export function reducer(state = initialState, action) {
         ...state,
         formDisplayed: displayed,
         editedId: editedId,
-        formTitle: editedRecipe === null ? '' : Array.isArray(editedRecipe.title) ? editedRecipe.title[0] : editedRecipe.title,
-        formDescription: editedRecipe === null ? '' : Array.isArray(editedRecipe.description) ? editedRecipe.description[0] : editedRecipe.description,
-        formDishKind: editedRecipe === null ? '' : Array.isArray(editedRecipe["dish_kind"]) ? editedRecipe["dish_kind"][0] : editedRecipe["dish_kind"],
+        formTitle: editedRecipe === null
+          ? '' : Array.isArray(editedRecipe.title)
+            ? editedRecipe.title[0] : editedRecipe.title,
+        formDescription: editedRecipe === null
+          ? '' : Array.isArray(editedRecipe.description)
+            ? editedRecipe.description[0] : editedRecipe.description,
+        formDishKind: editedRecipe === null
+          ? '' : Array.isArray(editedRecipe["dish_kind"])
+            ? editedRecipe["dish_kind"][0] : editedRecipe["dish_kind"],
       };
 
     case RECIPE_ACTIONS.SET_SAVING:

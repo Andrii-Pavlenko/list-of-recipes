@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import {Table, Message, Loader, Divider, Button, Container} from 'semantic-ui-react';
-import {RECIPE_TEXT} from '../text';
 import { connect } from 'react-redux';
+
+import {RECIPE_TEXT} from '../text';
 import {loadRecipes, setFormDisplayed} from '../redux/actions';
 import {getActivePage, getRecipeLoadingError, getRecipes} from "../redux/selectors";
 import RecipeForm from "./RecipeForm";

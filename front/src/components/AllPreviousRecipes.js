@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import {Button, Container, Divider, Icon, Loader, Message, Table} from "semantic-ui-react";
+
 import {
   getActivePage,
   getRecipeLoadingError,
@@ -35,7 +36,7 @@ const rightArrayOfRecipes = (rec) => {
   return [obj]
 };
 
-const AllPreviousRecipes = ({ activePage, recipes, error, load, removedIds, removeRecipe, showEditRecipeForm, showAllRecipes }) => {
+const AllPreviousRecipes = ({ recipes, error, load, removedIds, removeRecipe, showEditRecipeForm, showAllRecipes }) => {
   useEffect(() => {
     load();
   }, [load]);
@@ -51,9 +52,6 @@ const AllPreviousRecipes = ({ activePage, recipes, error, load, removedIds, remo
   } else if (recipes) {
     return (
       <>
-        {/*<Button as={NavLink} to="/" exact icon onClick={() => load()}>*/}
-        {/*  <Icon name="home"/>*/}
-        {/*</Button>*/}
         {recipes.filter(rec => rec.id === showAllRecipes).map(recipe => {
           const removing = removedIds.includes(recipe.id);
           return (
@@ -63,7 +61,7 @@ const AllPreviousRecipes = ({ activePage, recipes, error, load, removedIds, remo
                   icon
                   onClick={() => {
                     showEditRecipeForm(recipe.id);
-                    load()
+                    load();
                   }}
                 >
                   <Icon name="pencil"/>

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Button, Form, Header, Icon, Label, Modal, Select} from "semantic-ui-react";
-import {RECIPE_TEXT} from "../text";
 import {connect} from "react-redux";
+
+import {RECIPE_TEXT} from "../text";
 import {
   saveRecipe,
   setFormDisplayed,

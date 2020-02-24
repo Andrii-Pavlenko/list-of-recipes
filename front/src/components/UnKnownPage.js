@@ -2,8 +2,8 @@ import React from 'react';
 
 const UnKnownPage = () => {
   return (
-    <div>
-      <h1>Unknown Page!</h1>
+    <div className="unknown-page">
+     <div>Page 404!</div>
     </div>
   );
 };

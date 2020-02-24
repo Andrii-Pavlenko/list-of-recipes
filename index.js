@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const app = express();
 const { Client } = require('pg');
 const port = +process.env.PORT || 5000;
@@ -12,8 +11,6 @@ const client = new Client({
 });
 
 client.connect();
-
-// app.use(cors());
 
 app.get('/api/recipes', (req, res) => {
   client.query('SELECT * FROM recipes ORDER BY id', (err, dbResponse) => {
@@ -35,7 +32,10 @@ app.get('/api/recipes/:id', (req, res) => {
 
 app.post('/api/recipes', bodyParser.json(), (req, res) => {
   const { title, description, dish_kind } = req.body;
-  client.query('INSERT INTO recipes (title, description, creation_date, dish_kind) VALUES (ARRAY [ $1 ], ARRAY [ $2 ], ARRAY [ $3 ], ARRAY [ $4 ]) RETURNING id, creation_date[1]', [title, description, new Date().toISOString(), dish_kind], (err, dbResponse) => {
+  client.query(
+    'INSERT INTO recipes (title, description, creation_date, dish_kind) VALUES (ARRAY [ $1 ], ARRAY [ $2 ], ARRAY [ $3 ], ARRAY [ $4 ]) RETURNING id, creation_date[1]',
+    [title, description, new Date().toISOString(), dish_kind],
+    (err, dbResponse) => {
     res.status(201);
     res.json({
       id: dbResponse.rows[0].id,

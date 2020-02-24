@@ -21,7 +21,7 @@ menu, nav, section
   height: 100vh;
   padding-top: 50px;
   box-sizing: border-box;
-  background-image: url('dishes.jpg');
+  background-image: url('cold-dishes.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -50,6 +50,22 @@ menu, nav, section
 .small-table__container{
   height: 70vh;
   overflow: auto;
+}
+
+.table-cell {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.unknown-page {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  color: yellow;
+  font-weight: bold;
+  font-size: 100px;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 body ::-webkit-scrollbar-thumb {
