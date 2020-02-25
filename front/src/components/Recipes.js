@@ -58,7 +58,7 @@ const Recipes = ({ activePage, recipes, error, load, showCreateRecipeForm }) => 
     </>
     );
   } else {
-    return <Loader active inline="centered" />;
+    return <Loader active inline="centered" size='massive' inverted className="loader">Loading ...</Loader>;
   }
 };
 

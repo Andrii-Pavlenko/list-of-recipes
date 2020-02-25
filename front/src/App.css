@@ -68,6 +68,10 @@ menu, nav, section
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+.loader {
+  margin: auto;
+}
+
 body ::-webkit-scrollbar-thumb {
   background: #cccccc;
 }
