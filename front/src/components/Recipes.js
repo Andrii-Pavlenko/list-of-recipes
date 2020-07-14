@@ -53,7 +53,7 @@ const Recipes = ({ activePage, recipes, error, load, showCreateRecipeForm }) => 
           </Table>
 
         </Container>
-      <Button inverted onClick={showCreateRecipeForm}>{RECIPE_TEXT.NEW_RECIPE}</Button>
+      <Button color='black' onClick={showCreateRecipeForm}>{RECIPE_TEXT.NEW_RECIPE}</Button>
       <RecipeForm />
     </>
     );
